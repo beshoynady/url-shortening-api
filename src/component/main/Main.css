@@ -1,0 +1,66 @@
+main{
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.container{
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+main .main{
+    width: 100%;
+    height: calc(100%-150px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main .main .left{
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+main .main .left h1{
+    font-size: 70px;
+    line-height: 1.2em;
+    font-weight: 700;
+}
+main .main .left p{
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: var(--Grayish_Violet);
+}
+main .main .left button{
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    width: 200px;
+    height: 60px;
+    background-color: var(--Cyan);
+    border: 1px solid var(--Cyan);
+    border-radius: 30px;
+    margin-top: 40px;
+}
+
+main .main .right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .main .right img{
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    right: -12%;
+    overflow: hidden;
+
+}

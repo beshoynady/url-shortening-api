@@ -1,0 +1,65 @@
+.shorten_link{
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+.putlink-box{
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: -150px;
+
+}
+.container{
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.putlink-box form{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--Dark_Violet);
+    background-image: url('../../images/bg-shorten-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px solid var(--Very_Dark_Violet);
+    border-radius: 10px;
+
+
+}
+.putlink-box form input[type="text"]{
+    width: 75%;
+    height: 36%;
+    font-size: 18px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid var(--Dark_Violet);
+    border-radius: 15px;
+}
+.putlink-box form input[type="text"]::placeholder{
+    font-size: 20px;
+    color: var(--Grayish_Violet);
+    font-weight: 700;
+}
+.putlink-box form input[type="text"]:focus::placeholder{
+    color: transparent;
+}
+
+.putlink-box form input[type="button"]{
+    width: 15%;
+    height: 36%;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: white;
+    background-color: var(--Cyan);
+    border: 1px solid var(--Cyan);
+    border-radius: 15px;
+}
