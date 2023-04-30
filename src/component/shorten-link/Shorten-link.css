@@ -1,27 +1,36 @@
 .shorten_link{
     width: 100%;
-    height: 200px;
+    height: 100%;
+    margin-top: 150px;
     position: relative;
+    background-color: rgb(223, 223, 223);
+
+}
+section.container{
+    width: 85%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .putlink-box{
     width: 100%;
-    height: 300px;
-    margin-top: 50px;
+    height: 200px;
+    top: -100px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    position: absolute;
-    bottom: -150px;
+    background-color: red;
+    position: relative;
 
 }
-.container{
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 .putlink-box form{
     width: 100%;
-    height: 60%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -34,7 +43,7 @@
 
 
 }
-.putlink-box form input[type="text"]{
+.putlink-box form input[type="url"]{
     width: 75%;
     height: 36%;
     font-size: 18px;
@@ -43,16 +52,16 @@
     border: 2px solid var(--Dark_Violet);
     border-radius: 15px;
 }
-.putlink-box form input[type="text"]::placeholder{
+.putlink-box form input[type="url"]::placeholder{
     font-size: 20px;
     color: var(--Grayish_Violet);
     font-weight: 700;
 }
-.putlink-box form input[type="text"]:focus::placeholder{
+.putlink-box form input[type="url"]:focus::placeholder{
     color: transparent;
 }
 
-.putlink-box form input[type="button"]{
+.putlink-box form input[type="submit"]{
     width: 15%;
     height: 36%;
     font-size: 20px;
@@ -62,4 +71,20 @@
     background-color: var(--Cyan);
     border: 1px solid var(--Cyan);
     border-radius: 15px;
+}
+
+.short-link{
+    width: 100%;
+    height: auto;
+    /* display: none; */
+}
+.short-link div{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.short-link div{
+    width: 200px;
 }
