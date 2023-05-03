@@ -1,52 +1,77 @@
 import React,{useState, useEffect} from 'react'
 import './Shorten-link.css';
 
+const getdata =()=>{
+  let lacaldata = localStorage.getItem('links');
+  
+  if(lacaldata){
+    return  JSON.parse(lacaldata)
+  }else{
+  return []
+  }
+}
 
 const Shorten_link = () => {
   const API_Base ='https://api.shrtco.de/v2/shorten?url=';
-  const [url, seturl] = useState('')
-  const [shorturl, setshorturl] = useState('')
+  const [newurl, setnewurl] = useState('')
+  const [result, setresult] = useState(getdata());
   const [copy, setcopy] = useState('copy')
+  
 
+  
   const geturl =(e)=>{
-    seturl(e.target.value)
-    console.log(e.target.value)
+    setnewurl(e.target.value)
   }
-  const getshorturl = async (e)=>{
-    await e.preventDefault();
-    const res = await fetch(`${API_Base}${url}`);
-    const deta = await res.json()
-    const shorturl= await deta.result.short_link3
-    setshorturl(shorturl)
-  }
+
   const handlecopy =()=>{
-    navigator.clipboard.writeText(shorturl);
+    navigator.clipboard.writeText(result[0].short_link);
     setcopy('copied!')
   }
 
-  
+  const submit=(e)=>{
+    e.preventDefault();
+    if (!newurl){
+      alert('put your url')
+    }else{
+      const getshorturl = async (e)=>{
+        const res = await fetch(`${API_Base}${newurl}`);
+        const deta = await res.json()
+        setresult([deta.result ,...result])
+        // setnewurl('')
+      }
+      getshorturl()
+    }
+}
+useEffect(() => {
+  localStorage.setItem('links', JSON.stringify(result))
+},[result])
   return (
-    
     <section className='shorten_link'>
       <div className='container'>
         <div className='putlink-box'>
-          <form onSubmit={getshorturl}>
+          <form onSubmit={submit}>
             <input type='url' placeholder='Shorten a link here...' onChange={geturl} />
-            <input type='submit' value="Shorten It!" />
+            <input type='submit' value="Shorten It!" onClick={submit}/>
           </form>
         </div>
         <div className="short-link">
-          <div>
-            <p>{url}</p>
-            <div>
-              <p>{shorturl}</p>
-              <button onClick={handlecopy}>{copy}</button>
+          {result.map((link,i)=>{
+            return(
+              <div>
+              <p>{link.original_link}</p>
+              <div>
+                <p>{link.short_link}</p>
+                <button onClick={handlecopy}>{copy}</button>
+              </div>
             </div>
-          </div>
+            )
+            
+          })}
+          
           {/* <div>
-            <p>{[0]}</p>
+            <p>{getlistfromlocal[1].}</p>
             <div>
-              <p>{getlinks[1]}</p>
+              <p>{getlistfromlocal[1]}</p>
               <button>copy</button>
             </div>
           </div> */}
