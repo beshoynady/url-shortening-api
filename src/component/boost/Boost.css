@@ -26,3 +26,19 @@
     border: 1px solid var(--Cyan);
     border-radius: 30px;
 }
+
+
+@media (max-width:375px) {
+    .boost{
+        background-image: url(../../images/bg-boost-mobile.svg);
+    }
+    .boost h1{
+        font-size: 30px;
+    }
+    .boost button{
+        width: 250px;
+        height: 70px;
+    }
+
+
+}    

@@ -8,13 +8,11 @@ import Statistics from './component/statistics/Statistics';
 function App() {
   return (
     <>
-      <div>
-        <Main/>
-        <Shorten_link/>
-        <Statistics/>
-        <Boost/>
-        <Footer/>
-      </div>
+      <Main/>
+      <Shorten_link/>
+      <Statistics/>
+      <Boost/>
+      <Footer/>
     </>  
   );
 }

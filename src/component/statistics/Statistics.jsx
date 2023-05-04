@@ -26,7 +26,8 @@ const Statistics = () => {
                 advanced statistics dashboard.
             </p>
         </div>
-        <div className="boxs container">
+        <div className="container">
+          <div className='boxs'>
           {details.map((d,i)=>{
             return(
               <div className={`box-${i} all-box`} key={i}>
@@ -38,6 +39,7 @@ const Statistics = () => {
               </div>
             )
           })}
+          </div>
         </div>
     </section>
   )

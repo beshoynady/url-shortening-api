@@ -57,31 +57,17 @@ useEffect(() => {
         <div className="short-link">
           {result.map((link,i)=>{
             return(
-              <div>
-              <p>{link.original_link}</p>
-              <div>
-                <p>{link.short_link}</p>
-                <button onClick={handlecopy}>{copy}</button>
+              <div className='short-box' key={i}>
+                <p>{link.original_link}</p>
+                <div>
+                  <p>{link.short_link}</p>
+                  <button onClick={handlecopy}>{copy}</button>
+                </div>
               </div>
-            </div>
             )
             
           })}
           
-          {/* <div>
-            <p>{getlistfromlocal[1].}</p>
-            <div>
-              <p>{getlistfromlocal[1]}</p>
-              <button>copy</button>
-            </div>
-          </div> */}
-          <div>
-            <p>https://www.facebook.com/</p>
-            <div>
-              <p>https://www.facebook.com/</p>
-              <button>copy</button>
-            </div>
-          </div>
         </div>
       </div>
       

@@ -1,11 +1,11 @@
 import React from 'react'
-import illustration from '../../images/illustration-working.svg';
 import Header from '../header/Header';
 import './Main.css';
 const Main = () => {
   return (
-    <main className='container'>
-        <Header/>
+    <main>
+      <div className='container'>
+      <Header/>
         <div className='main'>
             <div className='left'>
                 <h1>More than just shorter links</h1>
@@ -14,9 +14,11 @@ const Main = () => {
                 <button>Get Started</button>
             </div>
             <div className="right">
-                <img src={illustration} alt="" />
+                <div className="img"></div>
             </div>
         </div>
+
+      </div>
         
     </main>
   )

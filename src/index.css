@@ -16,6 +16,8 @@
     --Very_Dark_Violet: hsl(260, 8%, 14%);
 }
 body{
+    width: 100%;
+    height: auto;
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
 }
